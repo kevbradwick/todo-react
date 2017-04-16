@@ -32,7 +32,7 @@ export default class TodoList extends React.PureComponent {
   }
 
   render() {
-    return <ul>
+    return <ul className="todo-item-list">
       {this.state.allComplete && <li>Complete!</li>}
       {this.items()}
     </ul>
