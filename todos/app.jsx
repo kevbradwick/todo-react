@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { TodoList } from './components'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
 
 
 let items = [
@@ -16,4 +19,9 @@ let items = [
   }
 ];
 
-ReactDOM.render(<TodoList items={items}/>, document.getElementById('todo-app'));
+ReactDOM.render(
+    <Provider store={createStore(todoApp)}>
+      <TodoList items={items} />
+    </Provider>,
+    document.getElementById('todo-app')
+);
